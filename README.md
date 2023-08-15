@@ -1,0 +1,1 @@
+# otus_task_2_terraform
