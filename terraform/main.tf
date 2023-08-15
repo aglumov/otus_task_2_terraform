@@ -37,3 +37,12 @@ resource "yandex_compute_instance" "this" {
     ssh-keys = "ubuntu:${file("~/.ssh/aglumov_id_rsa.pub")}"
   }
 }
+
+
+resource "terraform_data" "ansible" {
+  depends_on = [ local_file.ansible_inventory ]
+  provisioner "local-exec" {
+    command     = "ansible all -m ping"
+    working_dir = "../ansible"
+  }
+}

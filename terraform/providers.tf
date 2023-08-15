@@ -4,6 +4,12 @@ terraform {
       source  = "yandex-cloud/yandex"
       version = "~> 0.96"
     }
+
+    local = {
+      source  = "hashicorp/local"
+      version = "~>2.1.0"
+    }
+
   }
   backend "s3" {
     endpoint = "storage.yandexcloud.net"
