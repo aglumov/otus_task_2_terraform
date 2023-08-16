@@ -1,8 +1,13 @@
 ---
-- name: Install nginx
+- name: Install Nginx
   hosts: all
   become: true
 
   tasks:
 
-  - name: Install 
+  - name: Install Nginx
+    ansible.builtin.apt:
+      name: nginx
+      state: present
+      update_cache: true
+

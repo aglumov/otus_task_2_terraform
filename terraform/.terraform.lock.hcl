@@ -9,6 +9,14 @@ provider "registry.terraform.io/hashicorp/local" {
   ]
 }
 
+provider "registry.terraform.io/hashicorp/time" {
+  version     = "0.9.1"
+  constraints = "0.9.1"
+  hashes = [
+    "h1:NUv/YtEytDQncBQ2mTxnUZEy/rmDlPYmE9h2iokR0vk=",
+  ]
+}
+
 provider "registry.terraform.io/yandex-cloud/yandex" {
   version     = "0.96.1"
   constraints = "~> 0.96"

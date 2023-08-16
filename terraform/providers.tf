@@ -7,9 +7,13 @@ terraform {
 
     local = {
       source  = "hashicorp/local"
-      version = "~>2.1.0"
+      version = "~> 2.1.0"
     }
 
+    time = {
+      source  = "hashicorp/time"
+      version = "~> 0.9.1"
+    }
   }
   backend "s3" {
     endpoint = "storage.yandexcloud.net"

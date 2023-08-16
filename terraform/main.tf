@@ -38,11 +38,15 @@ resource "yandex_compute_instance" "this" {
   }
 }
 
+resource "time_sleep" "wait_2m_after_inventory" {
+  depends_on      = [local_file.ansible_inventory]
+  create_duration = "2m"
+}
 
 resource "terraform_data" "ansible" {
-  depends_on = [ local_file.ansible_inventory ]
+  depends_on = [time_sleep.wait_2m_after_inventory]
   provisioner "local-exec" {
-    command     = "ansible all -m ping"
+    command     = "ansible-playbook install_nginx.yaml"
     working_dir = "../ansible"
   }
 }
