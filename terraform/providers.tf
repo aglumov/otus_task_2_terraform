@@ -15,15 +15,6 @@ terraform {
       version = "~> 0.9.1"
     }
   }
-  backend "s3" {
-    endpoint = "storage.yandexcloud.net"
-    bucket   = "aglumov-terraform"
-    region   = "ru-central1"
-    key      = "yandex.tfstate"
-
-    skip_region_validation      = true
-    skip_credentials_validation = true
-  }
 }
 
 provider "yandex" {
