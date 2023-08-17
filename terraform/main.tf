@@ -34,7 +34,7 @@ resource "yandex_compute_instance" "this" {
   }
 
   metadata = {
-    ssh-keys = "ubuntu:${file("~/.ssh/aglumov_id_rsa.pub")}"
+    ssh-keys = "ubuntu:${file("~/.ssh/id_rsa.pub")}"
   }
 }
 
